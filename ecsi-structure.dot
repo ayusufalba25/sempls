@@ -1,0 +1,26 @@
+digraph "ecsi" {
+  rankdir=LR;
+  size="8,8";
+  node [fontname="Helvetica" fontsize=14 shape=box];
+  edge [fontname="Helvetica" fontsize=10];
+  center=1;
+  "Image" [shape=ellipse]
+  "Expectation" [shape=ellipse]
+  "Quality" [shape=ellipse]
+  "Value" [shape=ellipse]
+  "Satisfaction" [shape=ellipse]
+  "Complaints" [shape=ellipse]
+  "Loyalty" [shape=ellipse]
+ "Image" -> "Expectation" [label="beta_1_2=0.5"];
+  "Expectation" -> "Quality" [label="beta_2_3=0.56"];
+  "Expectation" -> "Value" [label="beta_2_4=0.05"];
+  "Quality" -> "Value" [label="beta_3_4=0.56"];
+  "Image" -> "Satisfaction" [label="beta_1_5=0.18"];
+  "Expectation" -> "Satisfaction" [label="beta_2_5=0.06"];
+  "Quality" -> "Satisfaction" [label="beta_3_5=0.51"];
+  "Value" -> "Satisfaction" [label="beta_4_5=0.19"];
+  "Satisfaction" -> "Complaints" [label="beta_5_6=0.53"];
+  "Image" -> "Loyalty" [label="beta_1_7=0.2"];
+  "Satisfaction" -> "Loyalty" [label="beta_5_7=0.48"];
+  "Complaints" -> "Loyalty" [label="beta_6_7=0.07"];
+}

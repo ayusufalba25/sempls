@@ -1,0 +1,50 @@
+digraph "ecsi" {
+  rankdir=LR;
+  size="8,8";
+  node [fontname="Helvetica" fontsize=14 shape=box];
+  edge [fontname="Helvetica" fontsize=10];
+  center=1;
+  "Image" [shape=ellipse]
+  "Expectation" [shape=ellipse]
+  "Quality" [shape=ellipse]
+  "Value" [shape=ellipse]
+  "Satisfaction" [shape=ellipse]
+  "Complaints" [shape=ellipse]
+  "Loyalty" [shape=ellipse]
+ "Image" -> "IMAG1" [label="lam_1_1=0.74"];
+  "Image" -> "IMAG2" [label="lam_1_2=0.6"];
+  "Image" -> "IMAG3" [label="lam_1_3=0.58"];
+  "Image" -> "IMAG4" [label="lam_1_4=0.77"];
+  "Image" -> "IMAG5" [label="lam_1_5=0.74"];
+  "Expectation" -> "CUEX1" [label="lam_2_1=0.77"];
+  "Expectation" -> "CUEX2" [label="lam_2_2=0.69"];
+  "Expectation" -> "CUEX3" [label="lam_2_3=0.61"];
+  "Quality" -> "PERQ1" [label="lam_3_1=0.8"];
+  "Quality" -> "PERQ2" [label="lam_3_2=0.64"];
+  "Quality" -> "PERQ3" [label="lam_3_3=0.78"];
+  "Quality" -> "PERQ4" [label="lam_3_4=0.77"];
+  "Quality" -> "PERQ5" [label="lam_3_5=0.76"];
+  "Quality" -> "PERQ6" [label="lam_3_6=0.78"];
+  "Quality" -> "PERQ7" [label="lam_3_7=0.78"];
+  "Value" -> "PERV1" [label="lam_4_1=0.9"];
+  "Value" -> "PERV2" [label="lam_4_2=0.94"];
+  "Satisfaction" -> "CUSA1" [label="lam_5_1=0.8"];
+  "Satisfaction" -> "CUSA2" [label="lam_5_2=0.85"];
+  "Satisfaction" -> "CUSA3" [label="lam_5_3=0.85"];
+  "Complaints" -> "CUSCO" [label="lam_6_1=1"];
+  "Loyalty" -> "CUSL1" [label="lam_7_1=0.81"];
+  "Loyalty" -> "CUSL2" [label="lam_7_2=0.22"];
+  "Loyalty" -> "CUSL3" [label="lam_7_3=0.92"];
+  "Image" -> "Expectation" [label="beta_1_2=0.5"];
+  "Expectation" -> "Quality" [label="beta_2_3=0.56"];
+  "Expectation" -> "Value" [label="beta_2_4=0.05"];
+  "Quality" -> "Value" [label="beta_3_4=0.56"];
+  "Image" -> "Satisfaction" [label="beta_1_5=0.18"];
+  "Expectation" -> "Satisfaction" [label="beta_2_5=0.06"];
+  "Quality" -> "Satisfaction" [label="beta_3_5=0.51"];
+  "Value" -> "Satisfaction" [label="beta_4_5=0.19"];
+  "Satisfaction" -> "Complaints" [label="beta_5_6=0.53"];
+  "Image" -> "Loyalty" [label="beta_1_7=0.2"];
+  "Satisfaction" -> "Loyalty" [label="beta_5_7=0.48"];
+  "Complaints" -> "Loyalty" [label="beta_6_7=0.07"];
+}
