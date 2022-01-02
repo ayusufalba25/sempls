@@ -1,0 +1,3 @@
+# Nulys Talk Day 1: SEM PLS Implementation
+
+This is a repository to provide the code for a webinar series at Nulys Statistical Consultant which called Nulys Talk. The materials in this repository related to the first day of Nulys Talk that concern about the implementation of Structural Equation Modeling using Partial Least Squares (SEM PLS) with an example to implement the technique using the R programming language.
