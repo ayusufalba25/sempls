@@ -1,10 +1,13 @@
+# Install packages
+# install.packages(c("semPLS", "DiagrammeR"))
+
 # Import libraries
-library(tidyverse)
 library(semPLS)
 library(DiagrammeR)
 
 # Import European Satisfaction Index (ECSI) and
 # the measurement instrument for the mobile phone industry
+help("ECSImobi")
 
 # From-to-matrix: first column contains the tail and the second row is the head
 # Structural model
@@ -20,9 +23,10 @@ View(mobi)
 
 # Create a plsm object
 ECSI <- plsm(data = mobi, strucmod = ECSIsm, measuremod = ECSImm)
+help("plsm")
 
 # mvplot(model = ECSI, data = mobi, LV = "Expectation")
-mvpairs(model = ECSI, data = mobi, LV = "Expectation")
+mvpairs(model = ECSI, data = mobi, LV = "Image")
 
 # sem pls
 ecsi <- sempls(model = ECSI, data = mobi, wscheme = "centroid")
@@ -35,7 +39,7 @@ pathDiagram(ecsi, file = "ecsi-structure", full = FALSE, edge.labels = "both",
             output.type = "graphics", digits = 2, graphics.fmt = "pdf")
 grViz("ecsi-structure.dot")
 
-# Full model
+# Full model (structural and measurement)
 pathDiagram(ecsi, file = "ecsi-fullstructure", full = TRUE, edge.labels = "both",
             output.type = "graphics", digits = 2, graphics.fmt = "pdf")
 grViz("ecsi-fullstructure.dot")
@@ -59,17 +63,16 @@ redundancy(ecsi)
 # 3. Goodness of fit
 gof(ecsi)
 
-
 # Path coefficients and total effects are extracted by pathCoeff and totalEffects
 pC <- pathCoeff(ecsi)
 print(pC, abbreviate = T, minlength = 3)
 
+# Total effect
 tE <- totalEffects(ecsi)
 print(tE, abbreviate = T, minlength = 3)
 
+# Outer weight
 plsWeights(ecsi)
-
-plsLoadings(ecsi) # Loadings used to check for discrimant validity
 
 # Plot of the evolution of outer weights until convergence for all blocks of MVs
 plot(ecsi)
