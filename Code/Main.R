@@ -35,14 +35,14 @@ names(ecsi)
 
 # Create the diagram
 # Structural model only
-pathDiagram(ecsi, file = "ecsi-structure", full = FALSE, edge.labels = "both",
+pathDiagram(ecsi, file = "Output/ecsi-structure", full = FALSE, edge.labels = "both",
             output.type = "graphics", digits = 2, graphics.fmt = "pdf")
-grViz("ecsi-structure.dot")
+grViz("Output/ecsi-structure.dot")
 
 # Full model (structural and measurement)
-pathDiagram(ecsi, file = "ecsi-fullstructure", full = TRUE, edge.labels = "both",
+pathDiagram(ecsi, file = "Output/ecsi-fullstructure", full = TRUE, edge.labels = "both",
             output.type = "graphics", digits = 2, graphics.fmt = "pdf")
-grViz("ecsi-fullstructure.dot")
+grViz("Output/ecsi-fullstructure.dot")
 
 # Model evaluation
 # A. Measurement model
